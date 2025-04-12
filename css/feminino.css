@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a,
+.actions a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.actions a:hover {
+  color: gray;
+}
+
+
+.nav-links,
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Banner com vídeo */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: #fff;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Banner secundário com imagem */
+.banner-secundario {
+  background: url('masculino-banner.webp') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.banner-secundario .banner-text {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.banner-secundario h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-secundario p {
+  font-size: 1.2rem;
+}
+
+/* Seção de produtos */
+.produtos-destaque {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.produtos-destaque h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.produto-card {
+  background-color: #ffb6c8;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+}
+
+.produto-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.produto-card h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.produto-card p {
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #000;
+
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .banner-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .produto-card {
+    width: 180px;
+  }
+
+  .produtos {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+  }
+
+  .actions {
+    margin-top: 1rem;
+  }
+
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .produtos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produto-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .banner-secundario h1 {
+    font-size: 2rem;
+  }
+
+  .banner-secundario p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text h1 {
+    font-size: 1.5rem;
+  }
+
+} 

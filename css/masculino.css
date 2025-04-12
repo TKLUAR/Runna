@@ -37,6 +37,11 @@
     margin-left: 1.5rem;
     font-weight: 500;
   }
+
+  .nav-links a:hover,
+.actions a:hover {
+  color: gray;
+}
   
   .nav-links,
   .actions {
