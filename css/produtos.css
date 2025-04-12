@@ -24,9 +24,14 @@ body {
   flex-wrap: wrap;
 }
 
-.logo {
+.logo a {
   font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+.logo a:hover {
+  color: gray;
 }
 
 .nav-links a,
@@ -149,6 +154,18 @@ body {
   transition: transform 0.3s;
 }
 
+.produto-card-masculino {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.produto-card-masculino:hover {
+  transform: translateY(-5px);
+}
+
 .produto-card:hover {
   transform: translateY(-5px);
 }
@@ -158,12 +175,24 @@ body {
   border-radius: 5px;
 }
 
+.produto-card-masculino img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 .produto-card h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+.produto-card-masculino h3 {
   margin-top: 1rem;
   font-size: 1.1rem;
 }
 
 .produto-card p {
+  color: #ccc;
+}
+.produto-card-masculino p {
   color: #ccc;
 }
 
@@ -245,4 +274,4 @@ footer {
     font-size: 1.5rem;
   }
 
-} 
+}

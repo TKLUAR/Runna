@@ -27,12 +27,18 @@
     align-items: center;
     padding: 1rem 2rem;
     z-index: 1000;
+    flex-wrap: wrap;
   }
-  
-  .logo {
+  .logo a {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+    color: #fff;
   }
+  .logo a:hover {
+    color: gray;
+  }
+  
   
   .nav-links a, .actions a {
     color: #fff;
@@ -44,6 +50,11 @@
   .actions a:hover {
     color: gray;
   }
+  .nav-links,
+.actions {
+  display: flex;
+  align-items: center;
+}
 
   
   .banner {
