@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'RootFont';
-  src: url('../Fonts/highrise/HighriseFont-Bold-Demo.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 * {
     margin: 0;
@@ -16,6 +10,7 @@
     background-color: #111;
     color: #fff;
   }
+  /* NAV-BAR */
   
   .navbar {
     position: fixed;
@@ -29,16 +24,18 @@
     z-index: 1000;
     flex-wrap: wrap;
   }
-  .logo a {
+  
+  .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-  }
-  .logo a:hover {
-    color: gray;
-  }
+   
   
+  }
+
+  .logo a{
+    color:#fff;
+    text-decoration: none;
+  }
   
   .nav-links a, .actions a {
     color: #fff;
@@ -50,12 +47,12 @@
   .actions a:hover {
     color: gray;
   }
-  .nav-links,
-.actions {
-  display: flex;
-  align-items: center;
-}
 
+  .nav-links, .actions {
+    display: flex;
+    align-items: center;
+  }
+/* BANNER */
   
   .banner {
     position: relative;
@@ -96,6 +93,8 @@
     font-weight: bold;
     border-radius: 5px;
   }
+
+  /* PRODUTOS */
   
   .produtos-destaque {
     padding: 4rem 2rem;
@@ -134,81 +133,90 @@
   .produto-card p {
     color: #ccc;
   }
-
+ 
+  /* FOOTER */
   footer {
     text-align: center;
     padding: 20px;
     border-top: 1px solid #000;
   }
-  
-  /* Podemos mudar isso depois, é so pra ficar responsivo */
-@media (max-width: 1024px) {
-  .banner-text h1 {
-    font-size: 2.5rem;
-  }
 
-  .produtos {
-    gap: 1.5rem;
-  }
-
-  .produto-card {
-    width: 180px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-
-  .nav-links a {
-    margin: 0.5rem 0;
-  }
-
-  .actions {
-    margin-top: 1rem;
-  }
-
-  .banner-text h1 {
+   /* MENU-HAMBURGER */
+  .hamburger {
+    display: none;
     font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
-
-  .banner-text p {
-    font-size: 1rem;
-  }
-
-  .btn {
-    padding: 0.6rem 1.2rem;
-  }
-
-  .produtos {
+  
+  .mobile-actions {
+    display: none;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .mobile-actions a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
   }
 
-  .produto-card {
-    width: 90%;
-    max-width: 300px;
+   /* RESPONSIVIDADE */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: #000;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      z-index: 999;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links a {
+      margin-left: 0;
+    }
+  
+    .actions {
+      display: none;
+    }
+  
+    .mobile-actions {
+      display: flex;
+    }
   }
-}
-
-@media (max-width: 480px) {
-  .banner-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .banner-text p {
-    font-size: 0.9rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-  }
-}
+ 
+    .banner {
+      height: 60vh; 
+    }
+  
+    .banner-text h1 {
+      font-size: 2rem;
+    }
+  
+    .banner-text p {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  
+  

@@ -3,25 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="Icon"
+      type="image/png"
+      href="imagens-videos/Icone-logo/android-chrome-512x512.png"
+    />
     <title>Runna</title>
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <header class="navbar">
       <nav class="logo"><a href="sobre.html">Runna</a></nav>
-      <nav class="nav-links">
+
+      <!-- MENU-RESPONSIVO -->
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <!-- MENU-RESPONSIVO -->
+
+      <nav class="nav-links" id="nav-links">
         <a href="index.html">Início</a>
         <a href="html/masculino.html">Masculino</a>
         <a href="html/feminino.html">Feminino</a>
         <a href="html/equipamentos.html">Equipamentos</a>
         <a href="html/contato.html">Contato</a>
+
+        <!-- MENU-RESPONSIVO -->
+        <div class="mobile-actions">
+          <a href="#">Login</a>
+          <a href="#">🛒</a>
+        </div>
       </nav>
+
       <div class="actions">
         <a href="#">Login</a>
         <a href="#">🛒</a>
       </div>
     </header>
 
+    <!-- BANNER -->
     <section class="banner">
       <video autoplay muted loop class="banner-video">
         <source
@@ -40,6 +58,7 @@
       </div>
     </section>
 
+    <!-- PRODUTOS -->
     <section class="produtos-destaque">
       <h2>Destaques</h2>
       <div class="produtos">
@@ -72,5 +91,15 @@
     <footer>
       <p>&copy; Runna</p>
     </footer>
+
+    <!-- JS-DO-MENU -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
