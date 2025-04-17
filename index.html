@@ -29,13 +29,13 @@
         <!-- MENU-RESPONSIVO -->
         <div class="mobile-actions">
           <a href="#">Login</a>
-          <a href="#">🛒</a>
+          <a href="#" class="cart-icon">🛒</a>
         </div>
       </nav>
 
       <div class="actions">
         <a href="#">Login</a>
-        <a href="#">🛒</a>
+        <a href="#" class="cart-icon">🛒</a>
       </div>
     </header>
 
@@ -69,6 +69,14 @@
           />
           <h3>Jaqueta Nike Sportswear</h3>
           <p>R$ 1200,90</p>
+          <button
+            class="add-to-cart"
+            data-nome="Jaqueta Nike Sportwear"
+            data-preco="1200.90"
+            data-img="imagens-videos/index/Jaqueta Nike Sportswear Club Puffer Masculina.avif"
+          >
+            Adicionar ao Carrinho
+          </button>
         </div>
         <div class="produto-card">
           <img
@@ -77,6 +85,14 @@
           />
           <h3>Nike Dunk Low Retro</h3>
           <p>R$ 899,90</p>
+          <button
+            class="add-to-cart"
+            data-nome="Nike Low Retro"
+            data-preco="899.90"
+            data-img="imagens-videos/index/nike dunk low retro.avif"
+          >
+            Adicionar ao Carrinho
+          </button>
         </div>
         <div class="produto-card">
           <img
@@ -85,21 +101,38 @@
           />
           <h3>Mochila Nike Brasilia</h3>
           <p>R$ 228,90</p>
+          <button
+            class="add-to-cart"
+            data-nome="Mochila Nike Brasilia"
+            data-preco="228.90"
+            data-img="imagens-videos/index/Mochila Nike Brasilia.avif"
+          >
+            Adicionar ao Carrinho
+          </button>
         </div>
       </div>
     </section>
+    <!--SIDEBAR DO CARRINHO-->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Seu Carrinho</h2>
+        <button id="close-cart">X</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p>Seu carrinho está vazio.</p>
+      </div>
+      <div class="cart-footer">
+        <p>Total:<span id="cart-total">R$ 0,00</span></p>
+        <button class="checkout-btn">Finalizar compra</button>
+      </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <div id="notificacao" class="notificacao">
+      Produto adicionado ao carrinho!
+    </div>
     <footer>
       <p>&copy; Runna</p>
     </footer>
-
-    <!-- JS-DO-MENU -->
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("nav-links");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    </script>
+    <script src="javascrip/javascript.js"></script>
   </body>
 </html>
