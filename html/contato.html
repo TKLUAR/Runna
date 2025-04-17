@@ -1,11 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fale conosco | Runna</title>
+  <link rel="stylesheet" href="../css/contato.css" />
 </head>
+
 <body>
-    
+  <header class="navbar">
+    <nav class="logo"><a href="sobre.html">Runna</a></nav>
+    <nav class="nav-links">
+      <a href="../index.html">Início</a>
+      <a href="masculino.html">Masculino</a>
+      <a href="feminino.html">Feminino</a>
+      <a href="equipamentos.html">Equipamentos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="actions">
+      <a href="#">Login</a>
+      <a href="#">🛒</a>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+
+  <section class="banner-contato">
+    <video autoplay muted loop class="banner-contato">
+      <source
+        src="../imagens-videos/pagina contato/Banner-contatos.mp4"
+        type="video/webm"
+      />
+      Seu navegador não suporta vídeo.
+    </video>
+    </div>
+  </section>
+
+   <!--linha com texto-->
+   <div class="linha">
+    Criamos este espaço especialmente para você fazer seus comentários, dar sugestões e esclarecer dúvidas.
+  </div>
+
+  <div class="caixa-botao">
+    <p>Todos os telefones</p>
+    <button id="abrirModal">VEJA AQUI</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" id="fecharModal">&times;</span>
+      <h2>Telefones</h2>
+      <p>Confira os telefones para cada assunto a ser tratado: <strong>(Seg à Sex - 08h às 18h)</strong></p>
+      <ul>
+        <li><strong>Wallace Calisto: (21) 98216-0730</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS Modal -->
+  <script>
+    const abrir = document.getElementById('abrirModal');
+    const fechar = document.getElementById('fecharModal');
+    const modal = document.getElementById('modal');
+
+    abrir.onclick = () => {
+      modal.style.display = 'block';
+    }
+
+    fechar.onclick = () => {
+      modal.style.display = 'none';
+    }
+
+    // Fechar clicando fora da caixa
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
+
+
