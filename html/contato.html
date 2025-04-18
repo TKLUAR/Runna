@@ -56,10 +56,32 @@
 
   <script src="../javascrip/javascript.js"></script>
 
+  <section class="content">
+
+    <div class="formulario">
+      <h3>Fale conosco!</h3>
+      
+      <form id="form-contato" class="form" method="post" action="../php/php.php">
+        <label for="assunto">Escolha um assunto:</label>
+        <select id="assunto" name="assunto" required>
+          <option value="elogio">Elogio</option>
+          <option value="reclamacao">Reclamação</option>
+          <option value="saude">Dúvida</option>
+        </select>
+      
+        <input name="nome" placeholder="Seu nome" required>
+        <input name="sobrenome" placeholder="Seu sobrenome" required>
+        <input class="field" id="email" name="email" placeholder="Seu E-mail" type="email" required>     
+        <textarea class="field" name="mesage" placeholder="Digite sua mensagem aqui" required></textarea>
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; Runna</p>
   </footer>
-  
+
 </body>
 
 </html>
