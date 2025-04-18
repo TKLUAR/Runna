@@ -87,5 +87,23 @@ function atualizarTotal() {
   cartTotal.textContent = `R$ ${total.toFixed(2)}`;
 }
 
+// Abre o modal
+const abrir = document.getElementById('abrirModal');
+const fechar = document.getElementById('fecharModal');
+const modal = document.getElementById('modal');
 
+abrir.onclick = () => {
+  modal.style.display = 'block';
+};
 
+// Fecha o modal
+fechar.onclick = () => {
+  modal.style.display = 'none';
+};
+
+// Fecha o modal clicando fora da caixa
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};

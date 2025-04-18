@@ -24,6 +24,7 @@ body {
   flex-wrap: wrap;
 }
 
+
 .logo a {
   font-size: 1.5rem;
   font-weight: bold;
@@ -128,6 +129,27 @@ body {
 /* Conteúdo do modal */
 .modal-conteudo {
   background-color: #fff;
+
+  .modal-conteudo li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .modal-conteudo .setor {
+    text-align: left;
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  .modal-conteudo .telefone {
+    text-align: right;
+    flex: 1;
+  }
+  
   margin: 10% auto;
   padding: 30px;
   border-radius: 10px;
@@ -137,6 +159,15 @@ body {
   position: relative;
   overflow-y: auto;
   max-height: 80vh;
+}
+
+.modal-conteudo h2 {
+  color: #222;
+}
+
+.modal-conteudo p {
+  color: #444;
+  margin-top: 5%;
 }
 
 /* Botão de fechar */
@@ -171,3 +202,9 @@ body {
   font-size: 16px;
   color: #555;
 }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #000; }
