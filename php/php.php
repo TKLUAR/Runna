@@ -1,50 +1,62 @@
 <?php
 
+// Composer
+require '../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // valida o e-mail
+    // Valida o e-mail
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Endereço de e-mail inválido.");
     }
 
+    // Coleta e valida os dados do formulário
     $assunto   = htmlspecialchars(trim($_POST["assunto"]));
     $nome      = htmlspecialchars(trim($_POST["nome"]));
     $sobrenome = htmlspecialchars(trim($_POST["sobrenome"]));
     $message   = htmlspecialchars(trim($_POST["message"]));
 
-    // Valida se os campos obrigatórios estão preenchidos
+    // Verifica campos obrigatórios
     if (empty($assunto) || empty($nome) || empty($sobrenome) || empty($message)) {
         die("Por favor, preencha todos os campos obrigatórios.");
     }
 
-    // corpo do email
-    $to = "w.calisto@yahoo.com.br";
-    $subject = "Contato - Formulário Cliente Runna";
+    // Configura o PHPMailer
+    $mail = new PHPMailer(true);
 
-    $body = "Assunto: $assunto\r\n";
-    $body .= "Nome: $nome $sobrenome\r\n";
-    $body .= "Email: $email\r\n";
-    $body .= "Mensagem:\r\n$message\r\n";
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'runnavivaomomento@gmail.com'; 
+        $mail->Password = 'zuvw yrav egos byzf';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    $email = str_replace(["\r", "\n", "%0a", "%0d"], '', $email);
+        $mail->setFrom('runnavivaomomento@gmail.com', 'Runna');
+        $mail->addAddress('runnavivaomomento@gmail.com');
 
-    // Cabeçalhos do e-mail
-    $headers = "From: runna@yahoo.com.br\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
+        // Define assunto e corpo do e-mail
+        $mail->isHTML(false);
+        $mail->Subject = "Contato - Formulario Cliente Runna";
+        $mail->Body    = "Assunto: $assunto\r\nNome: $nome $sobrenome\r\nEmail: $email\r\nMensagem:\r\n$message";
 
-    // Envia o e-mail
-    if (mail($to, $subject, $body, $headers)) {
-        // Redireciona para página de sucesso
-        header("Location: obrigado.html");
+        // Envia o e-mail
+        $mail->send();
+
+        // Redireciona após sucesso
+        header("Location: ../html/obrigado.html");
         exit;
-    } else {
-        die("Erro ao enviar o e-mail. Tente novamente mais tarde.");
+
+    } catch (Exception $e) {
+        die("Erro ao enviar o e-mail. Erro: {$mail->ErrorInfo}");
     }
 
 } else {
-    // Acesso direto sem formulário
     die("Acesso inválido.");
 }
 ?>
