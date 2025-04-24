@@ -1,87 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fale conosco | Runna</title>
+    <link rel="stylesheet" href="../css/contato.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fale conosco | Runna</title>
-  <link rel="stylesheet" href="../css/contato.css" />
-</head>
+  <body>
+    <header class="navbar">
+      <nav class="logo"><a href="sobre.html">Runna</a></nav>
+      <nav class="nav-links">
+        <a href="../index.html">Início</a>
+        <a href="masculino.html">Masculino</a>
+        <a href="feminino.html">Feminino</a>
+        <a href="equipamentos.html">Equipamentos</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="actions">
+        <a href="#">Login</a>
+        <a href="#">🛒</a>
+      </div>
+    </header>
 
-<body>
-  <header class="navbar">
-    <nav class="logo"><a href="sobre.html">Runna</a></nav>
-    <nav class="nav-links">
-      <a href="../index.html">Início</a>
-      <a href="masculino.html">Masculino</a>
-      <a href="feminino.html">Feminino</a>
-      <a href="equipamentos.html">Equipamentos</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-    <div class="actions">
-      <a href="#">Login</a>
-      <a href="#">🛒</a>
+    <section class="banner-contato">
+      <video autoplay muted loop class="banner-contato">
+        <source
+          src="../imagens-videos/pagina contato/VIDEO BANNNER PFV.mp4"
+          type="video/webm"
+        />
+        Seu navegador não suporta vídeo.
+      </video>
+    </section>
+
+    <div class="linha">
+      Criamos este espaço especialmente para você fazer seus comentários, dar
+      sugestões e esclarecer dúvidas.
     </div>
-  </header>
 
-  <section class="banner-contato">
-    <video autoplay muted loop class="banner-contato">
-      <source src="../imagens-videos/pagina contato/VIDEO BANNNER PFV.mp4" type="video/webm" />
-      Seu navegador não suporta vídeo.
-    </video>
-  </section>
-
-  <div class="linha">
-    Criamos este espaço especialmente para você fazer seus comentários, dar sugestões e esclarecer dúvidas.
-  </div>
-
-  <div class="caixa-botao">
-    <p>Todos os telefones</p>
-    <button id="abrirModal">VEJA AQUI</button>
-  </div>
-
-  <div id="modal" class="modal">
-    <div class="modal-conteudo">
-      <span class="fechar" id="fecharModal">&times;</span>
-      <h2>Telefones</h2>
-      <p>Confira os telefones para cada assunto a ser tratado: <strong>(Seg à Sex - 08h às 18h)</strong></p>
-      <ul>
-        <li><span class="setor"><strong>SAC</strong></span><span class="telefone"><strong>0800 982 1607</strong></span></li>
-        <li><span class="setor"><strong>Trocas e Devoluções</strong></span><span class="telefone"><strong>0800 570 2245</strong></span></li>
-        <li><span class="setor"><strong>Revendedores</strong></span><span class="telefone"><strong>0800 715 0089</strong></span></li>
-        <li><span class="setor"><strong>Parcerias e Divulgação</strong></span><span class="telefone"><strong>0800 202 1423</strong></span></li>
-      </ul>
+    <div class="caixa-botao">
+      <p>Todos os telefones</p>
+      <button id="abrirModal">VEJA AQUI</button>
     </div>
-  </div>
 
-  <script src="../javascrip/javascript.js"></script>
-
-  <section class="content">
-
-    <div class="formulario">
-      <h3>Fale conosco!</h3>
-      
-      <form id="form-contato" class="form" method="post" action="../php/php.php">
-        <label for="assunto">Escolha um assunto:</label>
-        <select id="assunto" name="assunto" required>
-          <option value="elogio">Elogio</option>
-          <option value="reclamacao">Reclamação</option>
-          <option value="saude">Dúvida</option>
-        </select>
-      
-        <input name="nome" placeholder="Seu nome" required>
-        <input name="sobrenome" placeholder="Seu sobrenome" required>
-        <input class="field" id="email" name="email" placeholder="Seu E-mail" type="email" required>     
-        <textarea class="field" name="message" placeholder="Digite sua mensagem aqui" required></textarea>
-        <input type="submit" value="Enviar">
-      </form>
+    <div id="modal" class="modal">
+      <div class="modal-conteudo">
+        <span class="fechar" id="fecharModal">&times;</span>
+        <h2>Telefones</h2>
+        <p>
+          Confira os telefones para cada assunto a ser tratado:
+          <strong>(Seg à Sex - 08h às 18h)</strong>
+        </p>
+        <ul>
+          <li>
+            <span class="setor"><strong>SAC</strong></span
+            ><span class="telefone"><strong>0800 982 1607</strong></span>
+          </li>
+          <li>
+            <span class="setor"><strong>Trocas e Devoluções</strong></span
+            ><span class="telefone"><strong>0800 570 2245</strong></span>
+          </li>
+          <li>
+            <span class="setor"><strong>Revendedores</strong></span
+            ><span class="telefone"><strong>0800 715 0089</strong></span>
+          </li>
+          <li>
+            <span class="setor"><strong>Parcerias e Divulgação</strong></span
+            ><span class="telefone"><strong>0800 202 1423</strong></span>
+          </li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; Runna</p>
-  </footer>
+    <script src="../javascrip/javascript.js"></script>
 
-</body>
+    <section class="content">
+      <div class="formulario">
+        <h3>Fale conosco!</h3>
 
+        <form
+          id="form-contato"
+          class="form"
+          method="post"
+          action="../php/php.php"
+        >
+          <label for="assunto">Escolha um assunto:</label>
+          <select id="assunto" name="assunto" required>
+            <option value="elogio">Elogio</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="saude">Dúvida</option>
+          </select>
+
+          <input name="nome" placeholder="Seu nome" required />
+          <input name="sobrenome" placeholder="Seu sobrenome" required />
+          <input
+            class="field"
+            id="email"
+            name="email"
+            placeholder="Seu E-mail"
+            type="email"
+            required
+          />
+          <textarea
+            class="field"
+            name="message"
+            placeholder="Digite sua mensagem aqui"
+            required
+          ></textarea>
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Runna</p>
+    </footer>
+  </body>
 </html>
