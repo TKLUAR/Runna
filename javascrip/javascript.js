@@ -38,8 +38,50 @@ const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 const notificacao = document.getElementById('notificacao');
 
+let carrinho = [];
 let total = 0;
 
+// Carregar carrinho salvo no localStorage
+window.addEventListener('load', () => {
+  const carrinhoSalvo = localStorage.getItem('carrinho');
+  if (carrinhoSalvo) {
+    carrinho = JSON.parse(carrinhoSalvo);
+    renderizarCarrinho();
+  }
+});
+
+function salvarCarrinho() {
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+function atualizarTotal() {
+  total = carrinho.reduce((soma, item) => soma + item.preco, 0);
+  cartTotal.textContent = `R$ ${total.toFixed(2)}`;
+}
+
+function renderizarCarrinho() {
+  cartItems.innerHTML = '';
+  carrinho.forEach((item, index) => {
+    const itemElemento = document.createElement('div');
+    itemElemento.classList.add('cart-item');
+    itemElemento.innerHTML = `
+      <img src="${item.imagem}" alt="${item.nome}" class="item-icon" style="width:40px; height:40px; border-radius:5px;">
+      <span style="flex:1">${item.nome}</span>
+      <span> R$ ${item.preco.toFixed(2)}</span>
+      <button class="remove-btn" data-index="${index}">X</button>
+    `;
+    cartItems.appendChild(itemElemento);
+
+    itemElemento.querySelector('.remove-btn').addEventListener('click', () => {
+      carrinho.splice(index, 1);
+      salvarCarrinho();
+      renderizarCarrinho();
+    });
+  });
+  atualizarTotal();
+}
+
+//Adicionar ao carrinho
 botoesAdicionar.forEach(botao => {
   botao.addEventListener('click', () => {
     const nome = botao.getAttribute('data-nome');
@@ -47,30 +89,11 @@ botoesAdicionar.forEach(botao => {
     const imagem = botao.getAttribute('data-img');
 
     if (!nome || isNaN(preco) || !imagem) return;
+    if (carrinho.some(item => item.nome === nome)) return;
 
-    // Cria item visual no carrinho
-    const item = document.createElement('div');
-    item.classList.add('cart-item');
-    item.innerHTML = `
-      <img src="${imagem}" alt="${nome}" class="item-icon" style="width:40px; height:40px; border-radius:5px;">
-      <span style="flex:1;">${nome}</span>
-      <span>R$ ${preco.toFixed(2)}</span>
-      <button class="remove-btn" style="background:none; border:none; color:white; font-size:18px;">✖</button>
-    `;
-
-    // Adiciona item
-    cartItems.appendChild(item);
-    total += preco;
-    atualizarTotal();
-
-    // Remover item
-    item.querySelector('.remove-btn').addEventListener('click', () => {
-      item.remove();
-      total -= preco;
-      atualizarTotal();
-    });
-
-    // Abrir carrinho automaticamente
+    carrinho.push({ nome, preco, imagem });
+    salvarCarrinho();
+    renderizarCarrinho();
     abrirCarrinho();
 
     // Notificação
@@ -83,11 +106,7 @@ botoesAdicionar.forEach(botao => {
   });
 });
 
-function atualizarTotal() {
-  cartTotal.textContent = `R$ ${total.toFixed(2)}`;
-}
-
-// Abre o modal
+// MODAL
 const abrir = document.getElementById('abrirModal');
 const fechar = document.getElementById('fecharModal');
 const modal = document.getElementById('modal');
@@ -96,12 +115,10 @@ abrir.onclick = () => {
   modal.style.display = 'block';
 };
 
-// Fecha o modal
 fechar.onclick = () => {
   modal.style.display = 'none';
 };
 
-// Fecha o modal clicando fora da caixa
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = 'none';
