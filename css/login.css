@@ -1,6 +1,7 @@
 body{
     background-color: black;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
 
@@ -15,4 +16,5 @@ body{
     padding: 20px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
+    
 }
