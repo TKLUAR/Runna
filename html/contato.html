@@ -10,17 +10,29 @@
     />
     <title>Fale conosco | Runna</title>
     <link rel="stylesheet" href="../css/contato.css" />
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
 
   <body>
     <header class="navbar">
       <nav class="logo"><a href="sobre.html">Runna</a></nav>
+
+      <!-- MENU-RESPONSIVO -->
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <!-- MENU-RESPONSIVO -->
+
       <nav class="nav-links">
         <a href="../index.html">Início</a>
         <a href="masculino.html">Masculino</a>
         <a href="feminino.html">Feminino</a>
         <a href="equipamentos.html">Equipamentos</a>
         <a href="contato.html">Contato</a>
+
+        <!-- MENU-RESPONSIVO -->
+        <div class="mobile-actions">
+          <a href="login.php">Login</a>
+          <a href="#" class="cart-icon">🛒</a>
+        </div>
       </nav>
       <div class="actions">
         <a href="login.php">Login</a>
@@ -77,8 +89,6 @@
       </div>
     </div>
 
-    <script src="../javascrip/javascript.js"></script>
-
     <section class="content">
       <div class="formulario">
         <h3>Fale conosco!</h3>
@@ -116,9 +126,28 @@
         </form>
       </div>
     </section>
+    <!--SIDEBAR DO CARRINHO-->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Seu Carrinho</h2>
+        <button id="close-cart">X</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p>Seu carrinho está vazio.</p>
+      </div>
+      <div class="cart-footer">
+        <p>Total:<span id="cart-total">R$ 0,00</span></p>
+        <button class="checkout-btn">Finalizar compra</button>
+      </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <div id="notificacao" class="notificacao">
+      Produto adicionado ao carrinho!
+    </div>
 
     <footer>
       <p>&copy; Runna</p>
     </footer>
+    <script src="../javascrip/javascript.js"></script>
   </body>
 </html>
