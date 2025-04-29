@@ -1,5 +1,5 @@
 <?php
-    include("connection.php");
+    include("../php/connection.php");
 
     if (isset($_POST["submit"])) {
         $username = $_POST['user'];
@@ -15,13 +15,13 @@
             echo '
             <script>
                 alert("Login bem-sucedido!");
-                window.location.href = "welcome.php";
+                window.location.href = "../html/welcome.php";
             </script>';
         } else {
             echo '
             <script>
                 alert("Login falhou. Usuário ou senha inválidos.");
-                window.location.href = "login.php";
+                window.location.href = "../html/login.php";
             </script>';
         }
     }

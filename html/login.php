@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("../php/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -13,7 +13,7 @@ include("connection.php");
 </head>
  
 
-  <form action="validador.php" method="post" class="form-login">
+  <form action="../php/validador.php" method="post" class="form-login">
     <label for="">usuario</label>
     <input type="text" name="user" id="user">
     <label for="">senha</label>
