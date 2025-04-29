@@ -15,13 +15,13 @@
             echo '
             <script>
                 alert("Login bem-sucedido!");
-                window.location.href = "../index.html";
+                window.location.href = "welcome.php";
             </script>';
         } else {
             echo '
             <script>
                 alert("Login falhou. Usuário ou senha inválidos.");
-                window.location.href = "welcome.php";
+                window.location.href = "login.php";
             </script>';
         }
     }
